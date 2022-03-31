@@ -1,1 +1,3 @@
-alert("Hello");
+function MyFirstFunction() {
+    alert("Hello");
+}
