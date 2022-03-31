@@ -41,10 +41,42 @@ if (myAge > juliaAge) {
     console.log("Julia is older than John.")
 }
 
-// Sorting an Array
+// 3. Sorting an Array
 //
 // Exercise 1
 
 let quokkas = ["ottavia", "raul", "marta", "karolina", "jess", "alex", "angelina", "arno", "john"]
+let quokkasSorted = quokkas.sort()
+console.log("The first quokka is " + quokkasSorted[0])
+let lastParticipant = quokkasSorted.length - 1
+console.log("The last quokka is " + quokkasSorted[lastParticipant])
 
-alert("sadkljbf")
+for (let i = 0; i < quokkasSorted.length; i++) {
+    console.log(i + " " + quokkasSorted[i])
+}
+
+
+// Exercise 2
+
+let classAges = [31, 34, 29, 25, 39, 46, 79, 65]
+let x = 0
+
+while (x <= classAges.length) {
+    console.log("while loop: " + classAges[x])
+    x++
+}
+
+while (x <= classAges.length) {
+    if (classAges[x] % 2 == 0)
+        console.log("While loop even numbers: " + classAges[x])
+    x++
+}
+
+for (let i = 0; i < classAges.length; i++) {
+    console.log("for loop: " + classAges[i])
+}
+
+
+// Arrays and Functions
+//
+// Exercise 3
