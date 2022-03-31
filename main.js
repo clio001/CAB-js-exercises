@@ -45,3 +45,6 @@ if (myAge > juliaAge) {
 //
 // Exercise 1
 
+let quokkas = ["ottavia", "raul", "marta", "karolina", "jess", "alex", "angelina", "arno", "john"]
+
+alert("sadkljbf")
