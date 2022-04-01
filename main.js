@@ -142,3 +142,44 @@ function elementsToString () {
 
 elementsToString ()
 
+
+// 5. JAVASCRIPT STRING
+//
+// Exercise 1 - Reverse a number
+console.log("5. JAVASCRIPT STRING")
+
+let number = 32443
+let reversedString = ""
+
+function reverseNumber() {
+    console.log("Exercise 1: Original number: " + number)
+    let numberString = number.toString()
+    for (i = numberString.length - 1; i >= 0; i--) { // be sure to reduce the length of the string by one as the length is always one unit higher than the indexed length, which starts at 0, not at 1.
+       reversedString += numberString[i]
+    }
+
+    console.log("Exercise 1: Reversed number: " + reversedString)
+}
+
+reverseNumber()
+
+
+// Exercise 2 - Order a string in alphabetical order
+
+let webmaster = "webmaster"
+let arrayWebmaster = []
+
+function orderAlphabetical(myParameter) {
+    for (i = 0; i < webmaster.length; i++) {
+        arrayWebmaster.push(myParameter[i])
+        arrayWebmaster.sort()
+
+            }
+    console.log("Exercise 2: Order string alphabetically: " + arrayWebmaster)
+}
+
+orderAlphabetical(webmaster)
+
+
+// Exercise 3 - Convert first letter of word to uppercase
+
