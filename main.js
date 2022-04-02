@@ -192,30 +192,88 @@ orderAlphabetical(webmaster);
 // Exercise 3 - Convert first letter of word to uppercase
 
 let lowerCaseString = "prince of persia";
-let spaces = []
+let spaces = [];
 
-function stringUppercase (myParameter) {
-    //First, we search for spaces in the string and store the indexes thereof in the array SPACEs
-    for (i = 0; i < myParameter.length; i++) {
-        if (myParameter[i] == " ") {
-            spaces.push(i);
-        }        
+function stringUppercase(myParameter) {
+  //First, we search for spaces in the string and store the indexes thereof in the array SPACEs
+  for (i = 0; i < myParameter.length; i++) {
+    if (myParameter[i] == " ") {
+      spaces.push(i);
     }
+  }
 
-    var firstWord = myParameter.slice(0, spaces[0]);
-    var firstCharacter = firstWord.charAt(0);
-    var UpperCaseFirstWord = firstCharacter.toUpperCase() + firstWord.slice(1, spaces[0]);
+  var firstWord = myParameter.slice(0, spaces[0]);
+  var firstCharacter = firstWord.charAt(0);
+  var UpperCaseFirstWord =
+    firstCharacter.toUpperCase() + firstWord.slice(1, spaces[0]);
 
-    var secondWord = myParameter.slice(spaces[0], spaces[1]);
-    var firstCharacter = secondWord.charAt(1);
-    var UpperCaseSecondWord = firstCharacter.toUpperCase() + myParameter.slice(spaces[0] + 2, spaces[1])
+  var secondWord = myParameter.slice(spaces[0], spaces[1]);
+  var firstCharacter = secondWord.charAt(1);
+  var UpperCaseSecondWord =
+    firstCharacter.toUpperCase() + myParameter.slice(spaces[0] + 2, spaces[1]);
 
-    var lastWord = myParameter.slice(spaces[1], myParameter.length)
-    var firstCharacter = lastWord.charAt(1);
-    var UpperCaseLastWord = firstCharacter.toUpperCase() + myParameter.slice(spaces[1] + 2, myParameter.length);
+  var lastWord = myParameter.slice(spaces[1], myParameter.length);
+  var firstCharacter = lastWord.charAt(1);
+  var UpperCaseLastWord =
+    firstCharacter.toUpperCase() +
+    myParameter.slice(spaces[1] + 2, myParameter.length);
 
-    console.log("Exercise 3: These are the indexes of the spaces: " + spaces)
-    console.log("Exercise 3: First letter is uppercase: " + UpperCaseFirstWord + " " + UpperCaseSecondWord + " " + UpperCaseLastWord)
+  console.log("Exercise 3: These are the indexes of the spaces: " + spaces);
+  console.log(
+    "Exercise 3: First letter is uppercase: " +
+      UpperCaseFirstWord +
+      " " +
+      UpperCaseSecondWord +
+      " " +
+      UpperCaseLastWord
+  );
 }
 
 stringUppercase(lowerCaseString);
+
+// Exercise 4 - Find the longest word in a string
+
+let exampleString = "html css javascript";
+let wordSpaces = [];
+let wordLengthList = {};
+
+function findLongestWord(myParameter) {
+  for (i = 0; i < myParameter.length; i++) {
+    if (myParameter[i] == " ") {
+      wordSpaces.push(i);
+    }
+  }
+
+  var wordOne = myParameter.slice(0, wordSpaces[0]);
+  var wordTwo = myParameter.slice(wordSpaces[0] + 1, wordSpaces[1]);
+  var wordThree = myParameter.slice(wordSpaces[1] + 1, myParameter.length);
+
+  var wordOneNumber = wordSpaces[0];
+
+  var wordTwoNumber = wordSpaces[1] - wordSpaces[0] - 1;
+
+  var wordThreeNumber = myParameter.length - wordSpaces[1] - 1;
+
+  console.log("Liste der Längen: " + wordLengthList);
+  // -1 removes the space in the string that is also counted in the length of the word
+
+  if (wordOneNumber > wordTwoNumber) {
+    if (wordOneNumber > wordThreeNumber) {
+      console.log("The longest word is " + wordOne);
+    }
+  } else if (wordTwoNumber > wordThreeNumber) {
+    console.log("The longest word is " + wordTwo);
+  } else {
+    console.log("The longest word is " + wordThree);
+  }
+}
+
+findLongestWord(exampleString);
+
+const laenge = {
+  wort1: 12,
+  wort2: 5,
+  wort: 3,
+};
+
+console.log(laenge);
