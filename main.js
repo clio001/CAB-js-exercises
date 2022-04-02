@@ -233,9 +233,11 @@ stringUppercase(lowerCaseString);
 
 // Exercise 4 - Find the longest word in a string
 
-let exampleString = "html css javascript";
 let wordSpaces = [];
-let wordLengthList = {};
+function wortListe(word, number) {
+  this.wordString = word;
+  this.numberString = number;
+}
 
 function findLongestWord(myParameter) {
   for (i = 0; i < myParameter.length; i++) {
@@ -244,36 +246,39 @@ function findLongestWord(myParameter) {
     }
   }
 
-  var wordOne = myParameter.slice(0, wordSpaces[0]);
-  var wordTwo = myParameter.slice(wordSpaces[0] + 1, wordSpaces[1]);
-  var wordThree = myParameter.slice(wordSpaces[1] + 1, myParameter.length);
+  var wordOne = new wortListe(
+    myParameter.slice(0, wordSpaces[0]),
+    wordSpaces[0]
+  );
 
-  var wordOneNumber = wordSpaces[0];
+  var wordTwo = new wortListe(
+    myParameter.slice(wordSpaces[0] + 1, wordSpaces[1]),
+    wordSpaces[1] - wordSpaces[0] - 1
+  );
 
-  var wordTwoNumber = wordSpaces[1] - wordSpaces[0] - 1;
+  var wordThree = new wortListe(
+    myParameter.slice(wordSpaces[1] + 1, myParameter.length),
+    myParameter.length - wordSpaces[1] - 1
+  );
 
-  var wordThreeNumber = myParameter.length - wordSpaces[1] - 1;
+  console.log(wordOne.wordString, wordTwo.wordString, wordThree.wordString);
 
-  console.log("Liste der Längen: " + wordLengthList);
-  // -1 removes the space in the string that is also counted in the length of the word
+  let wordNumberArray = [
+    wordOne.numberString,
+    wordTwo.numberString,
+    wordThree.numberString,
+  ];
 
-  if (wordOneNumber > wordTwoNumber) {
-    if (wordOneNumber > wordThreeNumber) {
-      console.log("The longest word is " + wordOne);
-    }
-  } else if (wordTwoNumber > wordThreeNumber) {
-    console.log("The longest word is " + wordTwo);
-  } else {
-    console.log("The longest word is " + wordThree);
+  wordNumberArray.sort((a, b) => a - b);
+  console.log(wordNumberArray);
+
+  if (wordNumberArray[2] == wordOne.numberString) {
+    console.log("The longest word is " + wordOne.wordString);
+  } else if (wordNumberArray[2] == wordTwo.numberString) {
+    console.log("The longest word is " + wordTwo.wordString);
+  } else if (wordNumberArray[2] == wordThree.numberString) {
+    console.log("The longest word is " + wordThree.wordString);
   }
 }
 
-findLongestWord(exampleString);
-
-const laenge = {
-  wort1: 12,
-  wort2: 5,
-  wort: 3,
-};
-
-console.log(laenge);
+findLongestWord("web developer tutorial");
