@@ -319,3 +319,34 @@ function addBands(myParameter) {
 addBands(myBandList);
 
 // Exercise 2 - Auto-generate a table using JS
+
+function addMultTable(rows, cols) {
+  let pTag = document.querySelector("p");
+
+  let createTable = document.createElement("table");
+  pTag.appendChild(createTable);
+
+  for (i = 0; i < rows; i++) {
+    let tableTag = document.querySelector("table");
+    let createRow = document.createElement("tr");
+    tableTag.appendChild(createRow);
+  }
+
+  const getTrTags = document.querySelectorAll("tr");
+
+  for (i = 0; i < getTrTags.length; i++) {
+    for (x = 0; x < cols; x++) {
+      const createCols = document.createElement("td");
+      getTrTags[i].appendChild(createCols);
+    }
+  }
+
+  const getTdTag = document.querySelectorAll("td");
+
+  for (i = 0; i < getTdTag.length; i++) {
+    const tdText = document.createTextNode("\u2713");
+    getTdTag[i].appendChild(tdText);
+  }
+}
+
+addMultTable(4, 8);
