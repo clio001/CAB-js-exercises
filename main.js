@@ -3,7 +3,9 @@
 // 1. Variables and Expressions
 //
 // Exercise 1
+console.log("");
 console.log("1. VARIABLES AND EXPRESSIONS");
+console.log("");
 
 let myName = "John";
 console.log("Exercise 1: My name is " + myName);
@@ -22,7 +24,10 @@ console.log("Exercise 3: John is " + ageDiff + " years older than Julia");
 // 2. Conditional statements
 //
 // Exercise 4
+console.log("");
+console.log("");
 console.log("2. CONDITIONAL STATEMENTS");
+console.log("");
 
 if (myAge > 21) {
   console.log("Exercise 4: John is older than 21.");
@@ -43,7 +48,10 @@ if (myAge > juliaAge) {
 // 3. Sorting an Array
 //
 // Exercise 1
+console.log("");
+console.log("");
 console.log("3. SORTING AN ARRAY");
+console.log("");
 
 let quokkas = [
   "ottavia",
@@ -90,7 +98,10 @@ for (let i = 0; i < classAges.length; i++) {
 // 4. Arrays and Functions
 //
 // Exercise 3 - Find the lowest number of an array (Math.min())
+console.log("");
+console.log("");
 console.log("4. ARRAYS AND FUNCTIONS");
+console.log("");
 
 function lowestNumber(myParameter) {
   console.log(
@@ -156,7 +167,10 @@ elementsToString();
 // 5. JAVASCRIPT STRING
 //
 // Exercise 1 - Reverse a number
+console.log("");
+console.log("");
 console.log("5. JAVASCRIPT STRING");
+console.log("");
 
 let number = 32443;
 let reversedString = "";
@@ -282,3 +296,26 @@ function findLongestWord(myParameter) {
 }
 
 findLongestWord("web developer tutorial");
+
+// 6. DOM Manipulation Exercises
+console.log("");
+console.log("");
+console.log("6. DOM MANIPULATION EXERCISES");
+console.log("");
+
+// Exercise 1 - Create HTML list elements with JS
+let myBandList = ["Foo Fighters", "Tame Impala", "Nick Drake"];
+
+function addBands(myParameter) {
+  for (i = 0; i < myParameter.length; i++) {
+    const ulTag = document.querySelector("ul");
+    console.log(ulTag);
+    const listItem = document.createElement("li");
+    listItem.textContent = myParameter[i];
+    ulTag.appendChild(listItem);
+  }
+}
+
+addBands(myBandList);
+
+// Exercise 2 - Auto-generate a table using JS
