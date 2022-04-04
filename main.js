@@ -24,7 +24,7 @@ console.log("Exercise 3: John is " + ageDiff + " years older than Julia");
 // 2. Conditional statements
 //
 // Exercise 4
-console.log("");
+
 console.log("");
 console.log("2. CONDITIONAL STATEMENTS");
 console.log("");
@@ -48,7 +48,7 @@ if (myAge > juliaAge) {
 // 3. Sorting an Array
 //
 // Exercise 1
-console.log("");
+
 console.log("");
 console.log("3. SORTING AN ARRAY");
 console.log("");
@@ -98,7 +98,7 @@ for (let i = 0; i < classAges.length; i++) {
 // 4. Arrays and Functions
 //
 // Exercise 3 - Find the lowest number of an array (Math.min())
-console.log("");
+
 console.log("");
 console.log("4. ARRAYS AND FUNCTIONS");
 console.log("");
@@ -167,7 +167,7 @@ elementsToString();
 // 5. JAVASCRIPT STRING
 //
 // Exercise 1 - Reverse a number
-console.log("");
+
 console.log("");
 console.log("5. JAVASCRIPT STRING");
 console.log("");
@@ -299,7 +299,6 @@ findLongestWord("web developer tutorial");
 
 // 6. DOM Manipulation Exercises
 console.log("");
-console.log("");
 console.log("6. DOM MANIPULATION EXERCISES");
 console.log("");
 
@@ -309,11 +308,11 @@ let myBandList = ["Foo Fighters", "Tame Impala", "Nick Drake"];
 function addBands(myParameter) {
   for (i = 0; i < myParameter.length; i++) {
     const ulTag = document.querySelector("ul");
-    console.log(ulTag);
     const listItem = document.createElement("li");
     listItem.textContent = myParameter[i];
     ulTag.appendChild(listItem);
   }
+  console.log("Exercise 1: List items of bands generated.");
 }
 
 addBands(myBandList);
@@ -347,6 +346,90 @@ function addMultTable(rows, cols) {
     const tdText = document.createTextNode("\u2713");
     getTdTag[i].appendChild(tdText);
   }
+
+  console.log(
+    "Exercise 2: Table with " +
+      rows +
+      " rows and with " +
+      cols +
+      " columns generated."
+  );
 }
 
 addMultTable(4, 8);
+
+// 7. EXTRA: FUNCTION EXERCISES
+
+console.log("");
+console.log("7. EXTRA: FUNCTION EXERCISES");
+console.log("");
+
+// Exercise 1 - Use result variable within function
+
+function resultMultiplication() {
+  let result = 2 * 4;
+  console.log(
+    "Exercise 1: Using variable inside function. The multiplication of 2 * 4 is " +
+      result
+  );
+}
+
+resultMultiplication();
+
+// Exercise 2 - Use result variable outside function
+
+function resultMultiplicationOutside() {
+  let result = 2 * 4;
+  return result;
+}
+
+let myResult = resultMultiplicationOutside();
+console.log(
+  "Exercise 2: Using variable outside function. The result of 2 * 4 is " +
+    myResult
+);
+
+// Exercise 3 - Passing parameters through functions
+
+function passingParameters(a, b) {
+  let result = a * b;
+  return result;
+}
+
+myResult = passingParameters(2, 4);
+console.log(
+  "Exercise 3: Passing parameters through functions. Result of 2 * 4 is " +
+    myResult
+);
+
+// Exercise 4 - Type of triangle according to site length
+
+// Exercise 5 - Replace letters in a string
+
+var myArray = [
+  "M",
+  "a",
+  "s",
+  "s",
+  "a",
+  "c",
+  "h",
+  "u",
+  "s",
+  "s",
+  "e",
+  "t",
+  "t",
+  "s",
+];
+
+function replaceSCharacters(myArray) {
+  for (i = 0; i < myArray.length; i++) {
+    if (myArray[i] == "s") {
+      myArray.splice(i, 1, "5");
+    }
+  }
+  console.log("Exercise 4: Replacing array elements with splice(): " + myArray);
+}
+
+replaceSCharacters(myArray);
