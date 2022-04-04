@@ -433,3 +433,31 @@ function replaceSCharacters(myArray) {
 }
 
 replaceSCharacters(myArray);
+
+// Exercise 6 - Sum of array elements and smallest number from array, using sort compare function
+
+var myArray = [5, 2, 3, 4, 1, 6, 7, 8, 9, 10];
+var sum = 0;
+
+function returnSumOfElements(myParameter) {
+  for (i = 0; i < myParameter.length; i++) {
+    sum = sum + myParameter[i];
+  }
+  return sum;
+}
+
+function smallestNumber(myParameter) {
+  myParameter.sort((a, b) => a - b);
+  return myParameter[0];
+}
+
+var mySmallestNumber = smallestNumber(myArray);
+myResult = returnSumOfElements(myArray);
+console.log(
+  "Exercise 6: The sum of all array elements is " +
+    myResult +
+    " and the smallest number is " +
+    mySmallestNumber
+);
+
+// Exercise 7
