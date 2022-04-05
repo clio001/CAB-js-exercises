@@ -402,9 +402,41 @@ console.log(
     myResult
 );
 
-//TODO Exercise 4 - Type of triangle according to site length
+// Exercise 4 - Type of triangle according to side length
 
-console.log("Exercise 4: Triangle tba");
+let sidesOfTriangle = [12, 14, 1];
+
+function checkTriangle(sidesOfTriangle) {
+  if (
+    sidesOfTriangle[0] === sidesOfTriangle[1] &&
+    sidesOfTriangle[1] === sidesOfTriangle[2]
+  ) {
+    console.log("Exercise 4: The triangle is equilateral (all sides)");
+  } else if (
+    sidesOfTriangle[0] === sidesOfTriangle[1] &&
+    sidesOfTriangle[0] != sidesOfTriangle[2]
+  ) {
+    console.log("Exercise 4: The triangle is isosceles (two equal sides)");
+  } else if (
+    sidesOfTriangle[1] === sidesOfTriangle[2] &&
+    sidesOfTriangle[1] != sidesOfTriangle[0]
+  ) {
+    console.log("Exercise 4: The triangle is isosceles (two equal sides)");
+  } else if (
+    sidesOfTriangle[0] === sidesOfTriangle[2] &&
+    sidesOfTriangle[1] != sidesOfTriangle[0]
+  ) {
+    console.log("Exercise 4: The triangle is isosceles (two equal sides)");
+  } else if (
+    sidesOfTriangle[0] != sidesOfTriangle[1] &&
+    sidesOfTriangle[0] != sidesOfTriangle[2] &&
+    sidesOfTriangle[1] != sidesOfTriangle[2]
+  ) {
+    console.log("Exercise 4: The triangle is scalene (no equal sides)");
+  }
+}
+
+checkTriangle(sidesOfTriangle);
 
 // Exercise 5 - Replace letters in a string
 
@@ -456,10 +488,67 @@ function smallestNumber(myParameter) {
 var mySmallestNumber = smallestNumber(myArray);
 myResult = returnSumOfElements(myArray);
 console.log(
-  "Exercise 7: The sum of all array elements is " +
+  "Exercise 6: The sum of all array elements is " +
     myResult +
     " and the smallest number is " +
     mySmallestNumber
 );
 
-// Exercise 7
+// Exercise 7 - Return the sum of even numbers from an array
+
+var myNumbers = [2, 3, 8, 6, 9, 3, 8, 2];
+var evenNumbers = 0;
+
+function evenNumbersOnly(myNumbers) {
+  for (i = 0; i < myNumbers.length; i++) {
+    let rest = myNumbers[i] % 2;
+    if (rest === 0) {
+      evenNumbers = evenNumbers + myNumbers[i];
+    }
+  }
+  return evenNumbers;
+}
+myResult = evenNumbersOnly(myNumbers);
+console.log("Exercise 7: The sum of the even numbers is: " + myResult);
+
+// Exercise 8 - Return the sum of an array's elements even positions
+
+var myNumbers = [1, 2, 8, 3, 2, 3, 4];
+let evenPosition = 0;
+
+function addEvenPositions() {
+  for (i = 0; i < myNumbers.length; i++) {
+    var rest = i % 2;
+    if (rest === 0) {
+      evenPosition = evenPosition + myNumbers[i];
+    }
+  }
+  return evenPosition;
+}
+
+myResult = addEvenPositions(myNumbers);
+console.log("Exercise 8: The sum of even positioned elements is: " + myResult);
+
+// Exercise 9 - Name all even numbers before a number passed as a parameter into a function
+
+myNumber = 27;
+myNumbers = [];
+evenNumbers = [];
+
+function findEvenNumbers() {
+  for (i = 1; i < myNumber; i++) {
+    myNumbers.push(i);
+  }
+  for (i = 0; i < myNumbers.length; i++) {
+    var rest = myNumbers[i] % 2;
+    if (rest === 0) {
+      evenNumbers.push(myNumbers[i]);
+    }
+  }
+  return evenNumbers;
+}
+
+myResult = findEvenNumbers(myNumber);
+console.log(
+  "Exercise 9: All even numbers before " + myNumber + " are: " + evenNumbers
+);
