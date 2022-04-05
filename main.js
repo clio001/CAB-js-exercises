@@ -402,7 +402,9 @@ console.log(
     myResult
 );
 
-// Exercise 4 - Type of triangle according to site length
+//TODO Exercise 4 - Type of triangle according to site length
+
+console.log("Exercise 4: Triangle tba");
 
 // Exercise 5 - Replace letters in a string
 
@@ -429,7 +431,7 @@ function replaceSCharacters(myArray) {
       myArray.splice(i, 1, "5");
     }
   }
-  console.log("Exercise 4: Replacing array elements with splice(): " + myArray);
+  console.log("Exercise 5: Replacing array elements with splice(): " + myArray);
 }
 
 replaceSCharacters(myArray);
@@ -454,7 +456,7 @@ function smallestNumber(myParameter) {
 var mySmallestNumber = smallestNumber(myArray);
 myResult = returnSumOfElements(myArray);
 console.log(
-  "Exercise 6: The sum of all array elements is " +
+  "Exercise 7: The sum of all array elements is " +
     myResult +
     " and the smallest number is " +
     mySmallestNumber

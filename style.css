@@ -1,6 +1,9 @@
 body {
-  background: radial-gradient(lightyellow, lightblue);
-  display: flex;
+  background: radial-gradient(ellipse at top, red, transparent),
+    radial-gradient(ellipse at bottom, blue, transparent);
+  width: 100vw;
+  height: 100vh;
+  display: column;
   justify-content: center;
 }
 
@@ -13,8 +16,45 @@ div.container {
   display: block;
   justify-content: center;
   align-items: center;
-  box-shadow: 0 15px 25px grey;
+  box-shadow: 0px 5px 25px white;
 }
+
+.grid-container {
+  display: grid;
+  grid-template-areas:
+    "first first small1"
+    "first first small2"
+    "small3 small4 small4";
+}
+
+.main-item {
+  display: grid;
+  grid-area: first;
+  background-color: lightblue;
+}
+
+.small-item-1 {
+  display: grid;
+  grid-area: small1;
+  background-color: lightblue;
+}
+
+.small-item-2 {
+  display: grid;
+  grid-area: small2;
+  background-color: lightblue;
+}
+.small-item-3 {
+  display: grid;
+  grid-area: small3;
+  background-color: lightblue;
+}
+.small-item-4 {
+  display: grid;
+  grid-area: small4;
+  background-color: lightblue;
+}
+
 
 article {
   border-radius: 25px;
