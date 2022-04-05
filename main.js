@@ -552,3 +552,33 @@ myResult = findEvenNumbers(myNumber);
 console.log(
   "Exercise 9: All even numbers before " + myNumber + " are: " + evenNumbers
 );
+
+// Exercise 10 - Name all odd numbers from two parameters passed into a function
+
+myNumbers = [];
+myNumbersBetween = [];
+var myOddNumbersBetween = [];
+
+function findOddNumbers(x, y) {
+  myNumbers.push(x, y);
+  myNumbers.sort((a, b) => a - b);
+
+  for (i = myNumbers[0] + 1; i < myNumbers[1]; i++) {
+    myNumbersBetween.push(i);
+    var rest = i % 2;
+    if (rest != 0) {
+      myOddNumbersBetween.push(i);
+    }
+  }
+  return myOddNumbersBetween;
+}
+
+myResult = findOddNumbers(5, 56);
+console.log(
+  "Exercise 10: All odd numbers between " +
+    myNumbers[0] +
+    " and " +
+    myNumbers[1] +
+    " are: " +
+    myOddNumbersBetween
+);
