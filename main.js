@@ -111,6 +111,22 @@ function lowestNumber(myParameter) {
 
 lowestNumber(classAges);
 
+// Exercise 3: Without the use of Math.min()
+
+var myResult = classAges[0];
+
+function findLowestNumber(myParameter) {
+  for (i = 0; i < myParameter.length; i++) {
+    if (myResult > myParameter[i]) {
+      myResult = myParameter[i];
+    }
+  }
+  return myResult;
+}
+
+myResult = findLowestNumber(classAges);
+console.log("Exercise 3: Lowest number without Math.min(): " + myResult);
+
 // Exercise 4 - Find the largest number of an array (Math.max())
 
 function highestNumber(myParameter) {
@@ -120,6 +136,22 @@ function highestNumber(myParameter) {
 }
 
 highestNumber(classAges);
+
+// Exercise 4 - Find largest number without Math.max()
+
+var myResult = 0;
+
+function findLargestNumber(myParameter) {
+  for (i = 0; i < myParameter.length; i++) {
+    if (myResult < myParameter[i]) {
+      myResult = myParameter[i];
+    }
+  }
+  return myResult;
+}
+
+myResult = findLargestNumber(classAges);
+console.log("Exercise 4: Largest number without Math.max(): " + myResult);
 
 // Exercise 5 - Pass two parameters through a function and return a specific index item
 
@@ -383,7 +415,7 @@ function resultMultiplicationOutside() {
   return result;
 }
 
-let myResult = resultMultiplicationOutside();
+myResult = resultMultiplicationOutside();
 console.log(
   "Exercise 2: Using variable outside function. The result of 2 * 4 is " +
     myResult
