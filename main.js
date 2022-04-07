@@ -112,6 +112,7 @@ function lowestNumber(myParameter) {
 lowestNumber(classAges);
 
 // Exercise 3: Without the use of Math.min()
+classAges = [31, 34, 29, 25, 39, 46, 79, 65];
 
 var myResult = classAges[0];
 
